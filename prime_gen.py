@@ -26,13 +26,13 @@ def driver(*args, **kwargs):
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument('--range', '-r', dest='range', metavar='LIMIT', type=check_positive_int, nargs=1, default=None,
                         help="""
-                        Finds all the prime numbers from 1 up to LIMIT (inclusive). For example:
-                        -r 10 would output 2, 3, 5, 7
+                        Finds all the prime numbers from 1 up to LIMIT (inclusive).
+                        For example: -r 10 would output 2, 3, 5, 7
                         """)
     group.add_argument('--digits', '-d', dest='digits', metavar=('DIGITS', 'SIZE'), type=check_positive_int, nargs=2, default=None,
                         help="""
-                        Prints SIZE amount of prime numbers with DIGITS amount of digits. For example:
-                        -d 10 5 would print 5 prime numbers that have 10 digits
+                        Prints a prime number with DIGITS amount of digits, and will continue to find SIZE amount of prime numbers of that digit size. DIGITS and SIZE must be positive integers.
+                        For example: -d 10 5 would print [7768103059, 6872570119, 2456328697, 1585648489, 1313618821]
                         """)
 
     args = parser.parse_args()

@@ -1,8 +1,28 @@
 # CSCI 39538: Homework 2: Recreational Math with Implicit Errors
 
+## Prime Number Generator
+`prime_gen.py` is a script that produces prime numbers by two different methods:
+- range: finds all the prime numbers from 1 to limit (inclusive)
+- digits: prints a set of random prime numbers of a certain digit size
+
+## How to use
+1. Clone and navigate into the root of the repo
+2. type `python prime_gen.py` and provide the desire arguments. There are two mutually exclusive arguments:
+    1. `--range`/`-r` `LIMIT` - Finds all the prime numbers from 1 up to LIMIT (inclusive). LIMIT must be a positive integer
+    
+    For example: `python prime_gen.py -r 10` would output `[2, 3, 5, 7]`
+    
+    2. `--digits`/`-d` `DIGITS` `SIZE` Prints a prime number with `DIGITS` amount of digits, and will continue to find `SIZE` amount of prime numbers of that digit size. `DIGITS` and `SIZE` must be positive integers.
+    
+    For example: `python prime_gen.py -d 10 5` would print `[7768103059, 6872570119, 2456328697, 1585648489, 1313618821]`
+
+## Implicit Errors
+There are at least 5 intentional implicit errors in `prime.py`, as well as a way to drastically improve `range_n_1()`'s runtime.
+
+## Team:
 ### Coder:
 ### - Henry Baum
-### Group Review Members: 
+### Review Members: 
 ### - Dewan S.
 ### - Avinash S.
 ### - Max S.
