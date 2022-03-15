@@ -7,8 +7,8 @@
 
 ## How to use
 1. Clone and navigate into the root of the repo
-2. type `python prime_gen.py` and provide the desire arguments. There are two mutually exclusive arguments:
-    1. `--range`/`-r` `LIMIT` - Finds all the prime numbers from 1 up to LIMIT (inclusive). LIMIT must be a positive integer
+2. type `python prime_gen.py` and provide the desired arguments. There are two mutually exclusive arguments:
+    1. `--range`/`-r` `LIMIT` - Finds all the prime numbers from 1 up to `LIMIT` (inclusive). `LIMIT` must be a positive integer
     
     For example: `python prime_gen.py -r 10` would output `[2, 3, 5, 7]`
     
