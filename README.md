@@ -10,11 +10,12 @@
 2. type `python prime_gen.py` and provide the desired arguments. There are two mutually exclusive arguments:
     1. `--range`/`-r` `LIMIT` - Finds all the prime numbers from 1 up to `LIMIT` (inclusive). `LIMIT` must be a positive integer
     
-    For example: `python prime_gen.py -r 10` would output `[2, 3, 5, 7]`
+    For example: `python prime_gen.py -r 10` should output `[2, 3, 5, 7]`
     
     2. `--digits`/`-d` `DIGITS` `SIZE` Prints a prime number with `DIGITS` amount of digits, and will continue to find `SIZE` amount of prime numbers of that digit size. `DIGITS` and `SIZE` must be positive integers.
     
-    For example: `python prime_gen.py -d 10 5` would print `[7768103059, 6872570119, 2456328697, 1585648489, 1313618821]`
+    For example: `python prime_gen.py -d 10 5` should print `[7768103059, 6872570119, 2456328697, 1585648489, 1313618821]`
+3. A third optional argument `-s`/`--solution` will use the generators without the added errors and provide the correct solutions for `range` or `digits`. __*By default, the script uses the faulty generators, so use `-s` if you want to see the correct output.*__ 
 
 ## Implicit Errors
 There are at least 5 intentional implicit errors in `prime.py`, as well as a way to drastically improve `range_n_1()`'s runtime.

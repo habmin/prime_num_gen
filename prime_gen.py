@@ -1,11 +1,16 @@
 import sys
 import argparse
 
-from prime import *
-
-# --- Helper Function ---
-# Validates arguments to be positive integers
 def check_positive_int(value):
+    """
+    --- Helper Function ---
+    Used by argparse to validates arguments are positive, non-zero integers
+        Parameters:
+            value: reads any data type
+        Returns:
+            value, typecasted to int if value passed was a non-zero, positive integer
+            Otherwise, raises Type Error
+    """
     try:
         if int(value) <= 0:
             raise argparse.ArgumentTypeError(f"Value must be a positive integer above 0")
@@ -13,16 +18,24 @@ def check_positive_int(value):
         raise argparse.ArgumentTypeError(f"Value must be a positive integer above 0")
     return int(value)
 
-# --- Main driver ---
-# Uses argparse to determine which function to run and pass their values
-# As well as provide help/documentation in using prime_gen.py
 def driver(*args, **kwargs):
+    """
+    --- Main Driver for prime_gen.py ---
+    Uses argparse to read runtime arguments from command line, then runs either range_1_n()
+    or digit_size() functions based on arguments.
+    Provides documentation and help useage for script using the -h/--help tag
+    """
     parser = argparse.ArgumentParser(description=
     """
     prime_gen.py is a script that produces prime numbers by two different methods:
     range: finds all the prime numbers from 1 to limit (inclusive)
     digits: prints a set of random prime numbers of a certain digit size
     """)
+    parser.add_argument("--solution", "-s", dest='solution', action="store_true", default=False,
+                        help="""
+                        Will use the correct prime number generating functions without the intentional implicit errors
+                        Default: False
+                        """)
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument('--range', '-r', dest='range', metavar='LIMIT', type=check_positive_int, nargs=1, default=None,
                         help="""
@@ -36,6 +49,11 @@ def driver(*args, **kwargs):
                         """)
 
     args = parser.parse_args()
+
+    if args.solution:
+        from solution import range_1_n, digit_size
+    else:
+        from prime import range_1_n, digit_size
 
     if args.range:
         range_1_n(args.range[0])
