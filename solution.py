@@ -6,7 +6,8 @@ limit < 5
 3. The potentional's key for adding for each solution is off by one
 (values starts at key 0, with value 1)
 4. For condition 3, n should be expression (3 * x * x) - (y * y)
-5. For digit_size, a better way to make n digit numbers (error can insert zero first)
+5. For digit_size, a better way ensure n digit numbers, (edge cases exist where 
+zero is the first digit, returning a n-1 digit number)
 
 BONUS
 
@@ -65,14 +66,11 @@ def range_1_n(limit : int):
     # --- Sieve of Atkin Implimentation ---
     # Use all positive integers of x and y for finding possible solutions for n
 
-    # Prevents modulo loops that would fail
     x = 1
-
+    # Comparing the square of x prevents useless loops that would fail
     while x * x <= limit:
-        
-        # Prevents modulo loops that would fail
         y = 1
-        
+        # Comparing the square of y prevents useless loops that would fail
         while y * y <= limit:       
             # Condition 1:
             # for all solutions where the remainder of n = 4x^2 + y^2 modulo 60 is 
@@ -80,7 +78,7 @@ def range_1_n(limit : int):
             # and where x is all numbers and y is odd
             # label that number as potentionally prime
             n = (4 * x * x) + (y * y)
-            if n % 60 in [1, 13, 17, 29, 37, 41, 49, 53] and n <= limit and y % 2 == 1:
+            if n <= limit and y % 2 == 1 and n % 60 in [1, 13, 17, 29, 37, 41, 49, 53]:
                 potentials[n - 1][1] = True
             
             # Condition 2:
@@ -89,7 +87,7 @@ def range_1_n(limit : int):
             # and where x is odd and y is even
             # label that number as potentionally prime
             n = (3 * x * x) + (y * y)
-            if n % 60 in [7, 19, 31, 43] and n <= limit and x % 2 == 1 and y % 2 == 0:
+            if n <= limit and x % 2 == 1 and y % 2 == 0 and n % 60 in [7, 19, 31, 43]:
                 potentials[n - 1][1] = True
             
             # Condition 3:
@@ -98,7 +96,7 @@ def range_1_n(limit : int):
             # and where x and y is an even/odd or odd/even combo
             # label that number as potentionally prime
             n = (3 * x * x) - (y * y)
-            if x > y and n % 60 in [11, 23, 47, 59] and n <= limit and y % 2 == (x - 1) % 2:
+            if x > y and n <= limit and y % 2 == (x - 1) % 2 and n % 60 in [11, 23, 47, 59]:
                 potentials[n - 1][1] = True
             
             y += 1
@@ -116,6 +114,7 @@ def range_1_n(limit : int):
     for n in potentials:
         if n[1]:
             results.append(n[0])
+    
     print(results)
 
 def is_prime(n : int):
