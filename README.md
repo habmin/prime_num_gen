@@ -24,6 +24,6 @@ There are at least 5 intentional implicit errors in `prime.py`, as well as a way
 ### Coder:
 ### - Henry Baum
 ### Review Members: 
-### - Dewan S.
+### - Dewan Sunnah
 ### - Avinash S.
-### - Max S.
+### - Max Selfridge
