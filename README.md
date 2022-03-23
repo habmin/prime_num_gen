@@ -22,3 +22,7 @@ Note: the solutions in `solution.py` are my own/original script before creating 
 
 ## Implicit Errors
 There are at least 5 intentional implicit errors in `prime.py`, as well as a way to drastically improve `range_n_1()`'s runtime. For the list of errors and their explanations, [see the readme for the solutions here](./SOLUTIONS.md).
+
+
+## Resources
+[Wikipedia Entry for Sieve of Atkin](https://en.wikipedia.org/wiki/Sieve_of_Atkin)

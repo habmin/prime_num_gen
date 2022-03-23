@@ -66,6 +66,6 @@ Line 22:    for x in range(1, limit + 1):
 Line 23:        for y in range(1, limit + 1):
 ...
 ```
-While technically not an error, the runtime for `range_1_n()` is mostly wasted by iterating through loops that will fail to find any potential prime numbers, on the basis that the value of x^2 or y^2 will be fair greater than the limit. This implimentation breaks from those loops when the squared variable is greater than the limit.
+While technically not an error, the runtime for `range_1_n()` is mostly wasted by iterating through loops that will fail to find any potential prime numbers, on the basis that the value of x^2 or y^2 will be fair greater than the `limit`. The implimentation in `solution.py` breaks from those loops when the squared variable is greater than the `limit`.
 
-There was also a slight improvement with runtime by having the modulo conditional statements modified so that limit checks on n and the relation of x and y were checked first before checking the remainder of `n`.
+There was also a slight improvement with runtime by having the modulo conditional statements modified so that limit checks on `n` and the polarity relationship of `x` and `y` were checked first before checking the remainder of `n`.
