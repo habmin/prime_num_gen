@@ -1,4 +1,7 @@
 # CSCI 39538: Homework 2: Recreational Math with Implicit Errors
+The objective of this assignment was to select a recreational math problem, then after completing it, purposely add errors for other team members to debug. 
+
+Note: the solutions in `solution.py` are my own/original script before creating the faultly script, not that of my team mates.
 
 ## Prime Number Generator
 `prime_gen.py` is a script that produces prime numbers by two different methods:
@@ -18,12 +21,4 @@
 3. A third optional argument `-s`/`--solution` will use the generators without the added errors and provide the correct solutions for `range` or `digits`. __*By default, the script uses the faulty generators, so use `-s` if you want to see the correct output.*__ 
 
 ## Implicit Errors
-There are at least 5 intentional implicit errors in `prime.py`, as well as a way to drastically improve `range_n_1()`'s runtime.
-
-## Team:
-### Coder:
-### - Henry Baum
-### Review Members: 
-### - Dewan Sunnah
-### - Avinash S.
-### - Max S.
+There are at least 5 intentional implicit errors in `prime.py`, as well as a way to drastically improve `range_n_1()`'s runtime. For the list of errors and their explanations, [see the readme for the solutions here](./SOLUTIONS.md).

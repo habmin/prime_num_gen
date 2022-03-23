@@ -1,9 +1,10 @@
 """
 --- Implimented Errors ---
-The following were the intentional errors that were added to prime.py. 
-This file contains the solution to those errors.
+The following were the intentional errors that were added to prime.py, as well as
+explainations why they weren't immediately obvious. This file contains the solutions
+to those errors.
 
-1. None of the the functions check the value to validate it that it's a positive integer.
+1. None of the the functions check limit or n to validate it that it's a positive integer.
     - Why it's not immediately obvious: While not the most creative error, it's important to
     provide proper feedback and checks for functions that explicitly show how the function
     should be used, including what type of data can be passed to it.
@@ -15,7 +16,7 @@ This file contains the solution to those errors.
 (values starts at key 0, with value 1)
     - Why it's not immediately obvious: In some way, it sort of is obvious when you generate
     the primes, as you'll notice each number past 5 seems to be off by +1. However, you need
-    exmine the code carefully to see if it's a key error or calculation error
+    examine the code carefully to see if it's a key error or calculation error
 4. For condition 3, n should be expression (3 * x * x) - (y * y)
     - Why it's not immediately obvious: You have to understand how Sieve of Atkin works to find
     the error in the expression.
