@@ -17,7 +17,7 @@ def range_1_n(limit : int):
     for i in range(1, limit + 1):
         potentials.append([i, False])
 
-    # --- Sieve of Atkin Implimentation ---
+    # --- Sieve of Atkin Implementation ---
     # Use all positive integers of x and y for finding possible solutions for n
     for x in range(1, limit + 1):
         for y in range(1, limit + 1):

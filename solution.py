@@ -1,5 +1,5 @@
 """
---- Implimented Errors ---
+--- Implemented Errors ---
 The following were the intentional errors that were added to prime.py, as well as
 explainations why they weren't immediately obvious. This file contains the solutions
 to those errors.
@@ -33,7 +33,7 @@ BONUS
 
 While technically not an error, the runtime for range_1_n is mostly wasted by iterating
 through loops that will fail to find any potential prime numbers, on the basis that the value of 
-x^2 or y^2 will be fair greater than the limit. This implimentation breaks from those loops when
+x^2 or y^2 will be fair greater than the limit. This implementation breaks from those loops when
 the squared variable is greater than the limit.
 
 There was also a slight improvement with runtime by having the modulo conditional statements
@@ -83,7 +83,7 @@ def range_1_n(limit : int):
     for i in range(1, limit + 1):
         potentials.append([i, False])
 
-    # --- Sieve of Atkin Implimentation ---
+    # --- Sieve of Atkin Implementation ---
     # Use all positive integers of x and y for finding possible solutions for n
 
     x = 1
